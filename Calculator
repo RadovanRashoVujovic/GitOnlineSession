@@ -1,0 +1,26 @@
+Console.WriteLine("Ova e DIGITRON");
+Console.WriteLine("Vnesi go prviot broj");
+
+
+double value1 = double.Parse(Console.ReadLine());
+
+Console.WriteLine("Vnesi go vtoriot broj");
+double value2 = double.Parse(Console.ReadLine());
+
+if (value1 == 0 || value2 == 0)
+{
+    Console.WriteLine("MAJMUN, mnozenje i delenje so NULA ne e dozvoleno");
+
+
+}
+else
+{
+    Console.WriteLine("resultatot od Mnozenjeto na ovie dva broja e :" + value1 * value2);
+    Console.WriteLine("resultatot od Sobiranjeto na ovie dva broja e :" + (value1 + value2));
+    Console.WriteLine("resultatot od Delenjeto na ovie dva broja e :" + value1 / value2);
+    Console.WriteLine("resultatot od Odzemanjeto na ovie dva broja e :" + (value1 - value2));
+}
+
+
+
+
