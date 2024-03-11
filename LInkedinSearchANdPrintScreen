@@ -1,0 +1,38 @@
+using System;
+using System.IO;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+
+namespace LinkedInJobSearch
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Set up Chrome WebDriver
+            var options = new ChromeOptions();
+            options.AddArgument("--headless"); // Run in headless mode (no visible browser window)
+            using (var driver = new ChromeDriver(options))
+            {
+                // Navigate to LinkedIn job search page
+                driver.Navigate().GoToUrl("https://www.linkedin.com/jobs");
+
+                // Find the search input field and enter "QA Engineer"
+                var searchBox = driver.FindElement(By.Name("keywords"));
+                searchBox.SendKeys("QA Engineer");
+                searchBox.SendKeys(Keys.Enter);
+
+                // Wait for search results to load (you can adjust the wait time)
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+
+                // Take a screenshot of the search results
+                var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+                var timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+                var screenshotPath = Path.Combine(@"C:\, $"LinkedIn_QA_Engineer_{timestamp}.png");
+                screenshot.SaveAsFile(screenshotPath, ScreenshotImageFormat.Png);
+
+                Console.WriteLine($"Screenshot saved at: {screenshotPath}");
+            }
+        }
+    }
+}
