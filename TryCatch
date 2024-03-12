@@ -1,0 +1,32 @@
+using System;
+using System.IO;
+
+
+namespace ConsoleApp7;
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        try
+        {
+            StreamReader streamreadeer = new StreamReader(@"C:\Users\user\source\Data1.txt");
+            Console.WriteLine(streamreadeer.ReadToEnd());
+            streamreadeer.Close();
+        }
+        catch (FileNotFoundException nf)
+        {
+            Console.WriteLine(nf.FileName);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            Console.WriteLine("\n\n");
+            Console.WriteLine(ex.StackTrace);
+        }
+       
+
+    }
+}
