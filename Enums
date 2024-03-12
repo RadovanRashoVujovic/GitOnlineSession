@@ -1,0 +1,56 @@
+using System;
+using System.IO;
+
+
+namespace ConsoleApp8;
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+      Employee [] employee = new Employee[3];
+      employee[0] = new Employee { EmpName = "Stojan", Gender = Gender.Unknow};
+      employee[1] = new Employee { EmpName = "Momir", Gender = Gender.Male};
+      employee[2] = new Employee { EmpName = "Jordanka", Gender = Gender.Female };
+
+        foreach (Employee e in employee)
+        {
+            Console.WriteLine("Employee Name : {0} and Gender : {1}",e.EmpName, e.Gender);
+        }
+
+
+    }
+
+    public static string GetGender(int gender)
+    {
+        switch (gender)
+        {
+            case 0:
+                return "Unknown";
+            case 1:
+                return "Male";
+            case 2:
+                return "Female";
+            default:
+                return "Invalid option";
+        }
+    }
+
+    //gender: 1 for male, 2 for female, 0  for Unknown
+
+    public enum Gender
+    {
+        Unknow,
+        Male,
+        Female
+    }
+    public class Employee
+    {
+        public string EmpName { get; set; }
+        public Gender Gender { get; set; }
+    }
+  
+
+   
+}
