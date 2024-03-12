@@ -9,12 +9,13 @@ class Program
 {
     static void Main(string[] args)
     {
+        StreamReader streamreadeer = null;  
 
         try
         {
-            StreamReader streamreadeer = new StreamReader(@"C:\Users\user\source\Data1.txt");
+            streamreadeer = new StreamReader(@"C:\Users\user\source\Data1.txt");
             Console.WriteLine(streamreadeer.ReadToEnd());
-            streamreadeer.Close();
+           
         }
         catch (FileNotFoundException nf)
         {
@@ -25,6 +26,10 @@ class Program
             Console.WriteLine(ex.Message);
             Console.WriteLine("\n\n");
             Console.WriteLine(ex.StackTrace);
+        }
+        finally
+        {
+            streamreadeer.Close();
         }
        
 
