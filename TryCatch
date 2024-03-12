@@ -12,8 +12,8 @@ class Program
         StreamReader streamreadeer = null;  
 
         try
-        {
-            streamreadeer = new StreamReader(@"C:\Users\user\source\Data1.txt");
+        {   //Change a Data.txt file in to Data1.txt
+            streamreadeer = new StreamReader(@"C:\Users\user\source\Data.txt");
             Console.WriteLine(streamreadeer.ReadToEnd());
            
         }
