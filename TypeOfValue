@@ -1,0 +1,38 @@
+using System;
+using System.IO;
+
+
+namespace ConsoleApp8;
+
+
+class Program
+{
+
+    //Generic type T of value conver anyy type (int, string float) to generic type. Not need to declare a int/string/float
+
+    static void Main(string[] args)
+    {
+        bool result = Comparison.Equals<string>("AB","Ab");
+        if (result)
+        {
+            Console.WriteLine("Values are equal!");
+
+        }
+        else
+        {
+            Console.WriteLine("Values are not equal!");
+        }
+
+    }
+
+    public class Comparison
+    {
+        public static bool Equals<T>( T value1, T value2)
+        {
+            return value1.Equals(value2);
+        }
+    }
+
+
+   
+}
