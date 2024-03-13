@@ -1,0 +1,30 @@
+using System;
+using System.IO;
+
+
+namespace ConsoleApp8;
+
+
+class Program
+{
+
+    
+
+    static void Main(string[] args)
+    {
+        AddNumers(10, 20);
+    }
+  //params keyword must be at the end of the method
+   public static void AddNumers(int FN, int SN, params int[] Addnumbers)
+    {
+        int result = FN+SN;
+        if (result != null) 
+        {
+            foreach (int i in Addnumbers)
+            {
+                result = result + i;
+            }
+        }
+        Console.WriteLine("Results: " + result);
+    }
+}
