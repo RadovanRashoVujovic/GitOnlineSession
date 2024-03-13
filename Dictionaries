@@ -1,0 +1,32 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+
+namespace ConsoleApp8;
+
+
+class Program
+{
+
+
+
+    static void Main(string[] args)
+    {
+
+        Dictionary<string, string> countries = new Dictionary<string, string>();
+        countries.Add("USA", "Boston, New York, Miami");
+        countries.Add("UK", "London, Manchester, Birmingham");
+        countries.Add("MKD", "Skopje, BItola, Ohrid");
+
+        //to display single line dicionary
+        Console.WriteLine(countries["MKD"]);
+
+        //To dispaly all value in dictionaries, first value "Key" is for country codes, and the second value "Value" is for the cities  
+        foreach(KeyValuePair<string, string> country in countries)
+        {
+            Console.WriteLine(" Country code is : " + country.Key +", and cities are : " + country.Value);
+        }
+    }
+
+
+}
